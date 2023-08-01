@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Displays the username, password and home directory lines of the file `/etc/passwd`.
+file_name="/etc/passwd"
+while read -r line; do
+      echo "$line" | cut -d':' -f 1,3,6
+done < "$file_name"
